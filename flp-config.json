@@ -1,0 +1,34 @@
+{
+    "application": {
+        "id": "",
+        "title": "sap.firebase.SAP-Firebase-Connect.SAP-Firebase-Connect",
+        "type": "SAP_UI5_Component",
+        "componentUrl": "/",
+        "appUrl": "#SAPFirebaseConnect-Display",
+        "navigationComponentName": "sap.firebase.SAP-Firebase-Connect",
+        "intentSemanticObject": "SAP-Firebase-Connect",
+        "intentAction": "Display",
+        "html5ApplicationName": "sapfirebaseconnect",
+        "HCPParentApplicationName": ""
+    },
+    "assignment": {
+        "groups": [
+            "b03155fb-ab05-4b78-b536-1ace1c216824-1567455607729"
+        ],
+        "contentPackages": [
+            "e9141efa-70f3-4b62-84af-1d3125ae0a5d-1567455093469"
+        ],
+        "categories": []
+    },
+    "tile": {
+        "type": "StaticTile",
+        "title": "Your title",
+        "subtitle": "your subtitle",
+        "searchKeywords": "Your title,your subtitle",
+        "displayIconUrl": "sap-icon://approvals",
+        "displayInfoText": "",
+        "size": "1x1",
+        "serviceURL": "",
+        "refreshInterval": ""
+    }
+}

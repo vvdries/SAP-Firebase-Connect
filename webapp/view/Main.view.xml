@@ -1,0 +1,52 @@
+<mvc:View controllerName="sap.firebase.SAP-Firebase-Connect.controller.Main" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<MessageStrip text="{i18n>fbSecurityRules}" type="Warning" showIcon="true" showCloseButton="true" class="sapUiMediumMarginBottom"/>
+						<Table id="shipmentTable" items="{ path: 'shipmentModel>/shipments', sorter: {path: 'code'}}">
+							<headerToolbar>
+								<Toolbar>
+									<content>
+										<Title text="{i18n>Shipments}" level="H2"/>
+										<ToolbarSpacer/>
+										<Button icon="sap-icon://add" press=".onOpenShipmentFragment" tooltip="{i18n>addShipmentTooltip}"/>
+									</content>
+								</Toolbar>
+							</headerToolbar>
+							<columns>
+								<Column>
+									<Text text="{i18n>ShipmentId}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>Origin}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>Destination}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>Status}"/>
+								</Column>
+								<Column hAlign="End"/>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{shipmentModel>code}"/>
+										<Text text="{shipmentModel>origin}"/>
+										<Text text="{shipmentModel>destination}"/>
+										<ObjectStatus text="{shipmentModel>status}"
+											state="{= ${shipmentModel>status} === 'Shipped' ? 'Success' : ${shipmentModel>status} === 'Missing' ? 'Warning' : ${shipmentModel>status} === 'Preparing' ? 'Information' : 'Error'}"
+											icon="{= ${shipmentModel>status} === 'Shipped' ? 'sap-icon://accept' : ${shipmentModel>status} === 'Missing' ? 'sap-icon://status-critical' : ${shipmentModel>status} === 'Preparing' ? 'sap-icon://begin' : 'sap-icon://status-negative'}"/>
+										<Button tooltip="{i18n>deleteShipment}" icon="sap-icon://delete" press=".onDeleteShipment" app:shipment="{shipmentModel>}"/>
+									</cells> 
+								</ColumnListItem>
+							</items>
+						</Table>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
